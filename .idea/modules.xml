@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Exercise-1/Structural/AdapterPattern/AdapterPattern.iml" filepath="$PROJECT_DIR$/Exercise-1/Structural/AdapterPattern/AdapterPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise_1/Structural/AdapterPattern/AdapterPattern.iml" filepath="$PROJECT_DIR$/Exercise_1/Structural/AdapterPattern/AdapterPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise--1/Behavioral/Behavioral.iml" filepath="$PROJECT_DIR$/Exercise--1/Behavioral/Behavioral.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercise-1/Structural/BridgePattern/BridgePattern.iml" filepath="$PROJECT_DIR$/Exercise-1/Structural/BridgePattern/BridgePattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise_1/Structural/BridgePattern/BridgePattern.iml" filepath="$PROJECT_DIR$/Exercise_1/Structural/BridgePattern/BridgePattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/EI_Company_Coding.iml" filepath="$PROJECT_DIR$/.idea/EI_Company_Coding.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercise-1/Exercise-1.iml" filepath="$PROJECT_DIR$/Exercise-1/Exercise-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise-2/Exercise-2.iml" filepath="$PROJECT_DIR$/Exercise-2/Exercise-2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercise-1/Creational/FactoryPattern/FactoryPattern.iml" filepath="$PROJECT_DIR$/Exercise-1/Creational/FactoryPattern/FactoryPattern.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercise-1/Behavioral/IteratorPattern/IteratorPattern.iml" filepath="$PROJECT_DIR$/Exercise-1/Behavioral/IteratorPattern/IteratorPattern.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercise-1/Behavioral/ObserverPattern/ObserverPattern.iml" filepath="$PROJECT_DIR$/Exercise-1/Behavioral/ObserverPattern/ObserverPattern.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercise-1/Creational/SingletonPattern/SingletonPattern.iml" filepath="$PROJECT_DIR$/Exercise-1/Creational/SingletonPattern/SingletonPattern.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercise-1/Structural/Structural.iml" filepath="$PROJECT_DIR$/Exercise-1/Structural/Structural.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise_1/Exercise_1.iml" filepath="$PROJECT_DIR$/Exercise_1/Exercise_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise_1/Creational/FactoryPattern/FactoryPattern.iml" filepath="$PROJECT_DIR$/Exercise_1/Creational/FactoryPattern/FactoryPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise_1/Behavioral/IteratorPattern/IteratorPattern.iml" filepath="$PROJECT_DIR$/Exercise_1/Behavioral/IteratorPattern/IteratorPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise_1/Behavioral/ObserverPattern/ObserverPattern.iml" filepath="$PROJECT_DIR$/Exercise_1/Behavioral/ObserverPattern/ObserverPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise_1/Creational/SingletonPattern/SingletonPattern.iml" filepath="$PROJECT_DIR$/Exercise_1/Creational/SingletonPattern/SingletonPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise_1/Structural/Structural.iml" filepath="$PROJECT_DIR$/Exercise_1/Structural/Structural.iml" />
     </modules>
   </component>
 </project>
