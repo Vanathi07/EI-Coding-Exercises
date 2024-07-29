@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Exercise-1/Structural/AdapterPattern/AdapterPattern.iml" filepath="$PROJECT_DIR$/Exercise-1/Structural/AdapterPattern/AdapterPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise--1/Behavioral/Behavioral.iml" filepath="$PROJECT_DIR$/Exercise--1/Behavioral/Behavioral.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise-1/Structural/BridgePattern/BridgePattern.iml" filepath="$PROJECT_DIR$/Exercise-1/Structural/BridgePattern/BridgePattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/EI_Company_Coding.iml" filepath="$PROJECT_DIR$/.idea/EI_Company_Coding.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise-1/Exercise-1.iml" filepath="$PROJECT_DIR$/Exercise-1/Exercise-1.iml" />
