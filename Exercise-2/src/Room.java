@@ -1,15 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Room {
     private String name;
     private int capacity;
     private boolean isBooked;
     private long bookingEndTime;
     private int currentOccupants;
+    private List<Observer> observers = new ArrayList<>();
 
     public Room(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
         this.isBooked = false;
         this.currentOccupants = 0;
+    }
+
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void notifyObservers(String message) {
+        for (Observer observer : observers) {
+            observer.update(message);
+        }
     }
 
     public String getName() {
@@ -20,7 +34,7 @@ public class Room {
         if (capacity > 0) {
             this.capacity = capacity;
         } else {
-            throw new IllegalArgumentException("Capacity must be a positive number.");
+            throw new IllegalArgumentException("Invalid capacity. Please enter a valid positive number.");
         }
     }
 
@@ -32,6 +46,7 @@ public class Room {
         if (isBooked && System.currentTimeMillis() > bookingEndTime) {
             isBooked = false;
             currentOccupants = 0;
+            notifyObservers(name + " is now unoccupied. Booking released. AC and lights off.");
         }
         return isBooked;
     }
@@ -39,29 +54,29 @@ public class Room {
     public void book(long durationMillis) {
         isBooked = true;
         bookingEndTime = System.currentTimeMillis() + durationMillis;
+        notifyObservers(name + " booked.");
     }
 
     public void cancelBooking() {
         isBooked = false;
         currentOccupants = 0;
+        notifyObservers(name + " booking cancelled.");
     }
 
     public void addOccupants(int occupants) {
         if (occupants > 0 && occupants <= capacity) {
             currentOccupants = occupants;
             if (occupants >= 2) {
-                System.out.println(name + " is now occupied by " + occupants + " persons.");
+                notifyObservers(name + " is now occupied by " + occupants + " persons. AC and lights turned on.");
             } else {
-                System.out.println("Occupancy insufficient to mark as occupied.");
+                notifyObservers(name + " occupancy insufficient to mark as occupied.");
             }
+        } else if (occupants == 0) {
+            currentOccupants = 0;
+            notifyObservers(name + " is now unoccupied. AC and lights turned off.");
         } else {
             System.out.println("Invalid number of occupants.");
         }
-    }
-
-    public void removeOccupants() {
-        currentOccupants = 0;
-        System.out.println(name + " is now unoccupied. AC and lights turned off.");
     }
 
     public boolean isOccupancySufficient() {

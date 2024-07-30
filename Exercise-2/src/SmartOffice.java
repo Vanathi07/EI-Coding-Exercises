@@ -1,16 +1,30 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 
 public class SmartOffice {
+    private static SmartOffice instance;
     private List<Room> rooms = new ArrayList<>();
+
+    private SmartOffice() {}
+
+    public static SmartOffice getInstance() {
+        if (instance == null) {
+            instance = new SmartOffice();
+        }
+        return instance;
+    }
 
     public void configureRooms(int count) {
         rooms.clear();
         for (int i = 1; i <= count; i++) {
-            rooms.add(new Room("Room " + i, 10));
+            Room room = new Room("Room " + i, 10);
+            room.addObserver(new Sensor("Sensor " + i));
+            room.addObserver(new ControlSystem("AC and Lights"));
+            rooms.add(room);
         }
         System.out.println("Office configured with " + count + " meeting rooms: " + getRoomNames() + ".");
     }
@@ -34,7 +48,14 @@ public class SmartOffice {
             if (!room.isBooked()) {
                 try {
                     SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-                    long startMillis = sdf.parse(startTime).getTime();
+                    Date date = sdf.parse(startTime);
+                    Calendar bookingTime = Calendar.getInstance();
+                    bookingTime.setTime(date);
+
+                    Calendar now = Calendar.getInstance();
+                    bookingTime.set(now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DATE));
+
+                    long startMillis = bookingTime.getTimeInMillis();
                     long currentMillis = System.currentTimeMillis();
                     long durationMillis = durationMinutes * 60 * 1000;
 
@@ -72,11 +93,7 @@ public class SmartOffice {
     public void addOccupants(int roomNumber, int occupants) {
         if (roomNumber > 0 && roomNumber <= rooms.size()) {
             Room room = rooms.get(roomNumber - 1);
-            if (room.isBooked()) {
-                room.addOccupants(occupants);
-            } else {
-                System.out.println("Room " + roomNumber + " is not booked. Cannot add occupants.");
-            }
+            room.addOccupants(occupants);
         } else {
             System.out.println("Invalid room number. Please enter a valid room number.");
         }
@@ -91,67 +108,5 @@ public class SmartOffice {
             }
         }
         return roomNames.toString();
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        SmartOffice smartOffice = new SmartOffice();
-        boolean running = true;
-
-        while (running) {
-            System.out.println("1. Configure Room Count");
-            System.out.println("2. Configure Room Capacity");
-            System.out.println("3. Block Room");
-            System.out.println("4. Cancel Booking");
-            System.out.println("5. Add Occupants");
-            System.out.println("6. Exit");
-            System.out.print("Enter your choice: ");
-
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1:
-                    System.out.print("Enter number of rooms: ");
-                    int roomCount = scanner.nextInt();
-                    smartOffice.configureRooms(roomCount);
-                    break;
-                case 2:
-                    System.out.print("Enter room number: ");
-                    int roomNumberForCapacity = scanner.nextInt();
-                    System.out.print("Enter maximum capacity: ");
-                    int capacity = scanner.nextInt();
-                    smartOffice.setRoomCapacity(roomNumberForCapacity, capacity);
-                    break;
-                case 3:
-                    System.out.print("Enter room number: ");
-                    int roomNumberForBooking = scanner.nextInt();
-                    System.out.print("Enter start time (HH:mm): ");
-                    String startTime = scanner.next();
-                    System.out.print("Enter duration (in minutes): ");
-                    int duration = scanner.nextInt();
-                    smartOffice.bookRoom(roomNumberForBooking, startTime, duration);
-                    break;
-                case 4:
-                    System.out.print("Enter room number: ");
-                    int roomNumberForCancellation = scanner.nextInt();
-                    smartOffice.cancelBooking(roomNumberForCancellation);
-                    break;
-                case 5:
-                    System.out.print("Enter room number: ");
-                    int roomNumberForOccupants = scanner.nextInt();
-                    System.out.print("Enter number of occupants: ");
-                    int occupants = scanner.nextInt();
-                    smartOffice.addOccupants(roomNumberForOccupants, occupants);
-                    break;
-                case 6:
-                    running = false;
-                    System.out.println("Exiting...");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please enter a number between 1 and 6.");
-                    break;
-            }
-        }
-
-        scanner.close();
     }
 }
