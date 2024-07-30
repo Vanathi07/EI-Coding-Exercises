@@ -2,7 +2,7 @@
 
 # Problem Statement on Design patterns
 
-## This exercise consists of six different use cases related to Stocks for better understanding of the Behavioural, Creational and Structural Design Patterns.
+This exercise consists of six different use cases related to Stocks for better understanding of the Behavioural, Creational and Structural Design Patterns.
 
 ## Behavioral Pattern
 Assignment of responsibilities between objects.
@@ -64,9 +64,44 @@ detection, and automate the control of air conditioning and lighting based on ro
 
 2. **Observer Pattern**:
    - Manages the relationship between rooms and their sensors (occupancy sensor, light controller, air conditioning controller).
-   - `Room` is the observable class, and the controllers and sensors are observers.
+   - Room is the observable class, and the controllers and sensors are observers.
 
 3. **Command Pattern**:
    - Encapsulates booking, cancellation, and status update logic in methods, allowing for flexible and extendable operations.
+
+## Class Descriptions
+
+**Observer.java**
+- Defines the Observer interface with an update method.
+
+**Sensor.java**
+- Implements the Observer interface for sensors.
+
+**ControlSystem.java**
+- Implements the Observer interface for control systems like AC and lights.
+
+**Room.java**
+- Represents a room with methods for booking, occupancy, and notifying observers.
+
+**SmartOffice.java**
+- Singleton class that manages the configuration and operations of the office facility.
+
+**Command.java**
+- Defines the Command interface with an execute method.
+
+**ConfigureRoomsCommand.java**
+- Command to configure the number of rooms.
+
+**SetRoomCapacityCommand.java**
+- Command to set the capacity of a specific room.
+
+**BookRoomCommand.java**
+- Command to book a room.
+
+**CancelBookingCommand.java**
+- Command to cancel a room booking.
+
+**AddOccupantsCommand.java**
+- Command to add occupants to a room.
 
 
