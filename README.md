@@ -8,28 +8,28 @@
 Assignment of responsibilities between objects.
 
 ### 1. Observer Pattern
-    - It is used to notify the customers (observers), when the stock prices are updated
+- It is used to notify the customers (observers), when the stock prices are updated
     
 ### 2. Iterator Pattern
-    - It is used to iterate over a collection of stock items
+- It is used to iterate over a collection of stock items
 
 ## Creational Pattern
 Makes sytem independent of how its objects are created, composed and represented.
 
 ### 1. Singleton Pattern
-    - Ensures that only one instance of StockMarket class exists
+- Ensures that only one instance of StockMarket class exists
 
 ### 2. Factory Pattern
-    - Allows subclass to alter type of stocks that will be created by resusing existing components
+- Allows subclass to alter type of stocks that will be created by resusing existing components
 
 ## Structural Pattern
 Assemble objects and classes into larger structures to achieve multiple goals.
 
-### 1. Adapter Pattern
-    - It is used to convert Stock prices from type String to Double (incompatible interfaces)
+### 1. Adapter Pattern 
+- It is used to convert Stock prices from type String to Double (incompatible interfaces)
 
 ### 2. Bridge Pattern
-    - It is used to display stocks in different formats by splitting as abstraction and implementation
+- It is used to display stocks in different formats by splitting as abstraction and implementation
 
 # Exercise 2:
 
